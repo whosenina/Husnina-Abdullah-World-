@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery Husnina</title>
+
+    <style>
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #FFE4E1;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: Plum;
+            padding: 18px;
+            border-radius: 15px;
+            margin: 20px;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            background-color: Plum;
+            color: white;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 12px;
+            font-size: 18px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: HotPink;
+            transform: scale(1.1);
+        }
+
+        .gallery-box {
+            background-color: white;
+            width: 75%;
+            margin: auto;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            color: #C71585;
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        /* BIG BOOKSHELF */
+
+        .bookshelf {
+
+            background: linear-gradient(
+                180deg,
+                #FFF0F5,
+                #FFDDEE,
+                #FFFFFF
+            );
+
+            padding: 25px;
+
+            border-radius: 25px;
+
+            width: fit-content;
+
+            margin: auto;
+
+            box-shadow:
+            0 10px 25px rgba(0,0,0,0.2),
+            inset 0 -10px 0 rgba(255,192,203,0.2);
+
+            border: 8px solid #FFC0CB;
+        }
+
+        /* SHELF ROW */
+
+        .gallery-container {
+
+            display: grid;
+
+            grid-template-columns:
+            repeat(3, 220px);
+
+            gap: 25px;
+
+            justify-content: center;
+        }
+
+        /* IMAGE FRAME */
+
+        .gallery-frame {
+
+            background: linear-gradient(
+                180deg,
+                #FFFFFF,
+                #FFF0F5,
+                #FFDDEE
+            );
+
+            padding: 8px;
+
+            border-radius: 18px;
+
+            border: 4px solid #FFD1DC;
+
+            box-shadow:
+            0 8px 15px rgba(0,0,0,0.18),
+            inset 0 -8px 0 #FFE4E1;
+
+            position: relative;
+
+            transition: 0.4s;
+        }
+
+        .gallery-frame::before {
+
+            content: "📚 ✨ 📖";
+
+            position: absolute;
+
+            top: -18px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            background-color: white;
+
+            padding: 3px 10px;
+
+            border-radius: 15px;
+
+            font-size: 16px;
+
+            border: 2px solid #FFD1DC;
+        }
+
+        .gallery-frame::after {
+
+            content: "";
+
+            position: absolute;
+
+            bottom: -10px;
+
+            left: 8px;
+
+            width: calc(100% - 16px);
+
+            height: 10px;
+
+            background-color: #FFC0CB;
+
+            border-radius: 0 0 12px 12px;
+        }
+
+        .gallery-frame img {
+
+            width: 220px;
+
+            border-radius: 12px;
+
+            display: block;
+        }
+
+        .gallery-frame:hover {
+
+            transform: translateY(-10px) rotate(1deg);
+        }
+
+        /* CAPTION */
+
+        .caption {
+
+            margin-top: 12px;
+
+            color: #C71585;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            background-color: #FFF0F5;
+
+            padding: 8px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+
+            border: 2px solid #FFD1DC;
+        }
+
+        /* PAGE BUTTONS */
+
+        .page-buttons{
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 35px;
+
+            margin-top: 45px;
+
+            flex-wrap: wrap;
+        }
+
+        .previous-page,
+        .next-page,
+        .top-button{
+
+            text-decoration: none;
+
+            color: white;
+
+            padding: 16px 28px;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            transition: 0.4s;
+
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        /* PREVIOUS BUTTON */
+
+        .previous-page{
+
+            background: linear-gradient(
+                135deg,
+                #DB7093,
+                HotPink
+            );
+
+            border-radius: 8px 40px 40px 8px;
+        }
+
+        .previous-page:hover{
+
+            transform: translateX(-10px) scale(1.05);
+
+            background: linear-gradient(
+                135deg,
+                HotPink,
+                #C71585
+            );
+        }
+
+        .previous-page::before{
+
+            content: "⬅";
+
+            margin-right: 10px;
+
+            font-size: 22px;
+        }
+
+        /* TOP BUTTON */
+
+        .top-button{
+
+            background: linear-gradient(
+                135deg,
+                #FFB6C1,
+                Plum
+            );
+
+            border-radius: 40px;
+        }
+
+        .top-button:hover{
+
+            transform: translateY(-6px) scale(1.05);
+
+            background: linear-gradient(
+                135deg,
+                HotPink,
+                #C71585
+            );
+        }
+
+        .top-button::before{
+
+            content: "⬆";
+
+            margin-right: 10px;
+
+            font-size: 22px;
+        }
+
+        /* NEXT BUTTON */
+
+        .next-page{
+
+            background: linear-gradient(
+                135deg,
+                Plum,
+                HotPink
+            );
+
+            border-radius: 40px 8px 8px 40px;
+        }
+
+        .next-page:hover{
+
+            transform: translateX(10px) scale(1.05);
+
+            background: linear-gradient(
+                135deg,
+                HotPink,
+                #C71585
+            );
+        }
+
+        .next-page::after{
+
+            content: "➜";
+
+            margin-left: 12px;
+
+            font-size: 22px;
+        }
+
+        /* BACK HOME BUTTON */
+
+        .back-home {
+
+            text-decoration: none;
+
+            background-color: #DB7093;
+
+            color: white;
+
+            padding: 12px 20px;
+
+            border-radius: 15px;
+
+            display: inline-block;
+
+            margin-top: 30px;
+
+            font-size: 18px;
+
+            transition: 0.3s;
+        }
+
+        .back-home:hover {
+
+            background-color: #C71585;
+
+            transform: scale(1.1);
+        }
+
+        footer {
+
+            margin-top: 30px;
+
+            padding-bottom: 20px;
+
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- BACKGROUND MUSIC -->
+
+    <audio autoplay loop>
+        <source src="audio for home, about, education, interest, contact, experience, gallery and writing/leberch-soft-piano-501446.mp3" type="audio/mpeg">
+    </audio>
+
+    <h1><b>─୨ৎ─ Husnina Gallery Collection ─୨ৎ─</b></h1>
+
+    <nav>
+
+        <a href="about.html">About 🎀</a>
+
+        <a href="education.html">Education 🎓</a>
+
+        <a href="interest.html">Interest 🩰</a>
+
+        <a href="contact.html">Contact 💌</a>
+
+        <a href="exprience.html">Experience 💪</a>
+
+        <a href="gallery.html">Gallery 📸</a>
+
+        <a href="writing.html">Writing ✒️</a>
+
+    </nav>
+
+    <div class="gallery-box">
+
+        <h2>
+            🕮 WARNING! You Have Enter The Zone of Bibliophile Gallery.
+            Enter at your own risk🤭📖
+        </h2>
+
+        <p>
+            Since my mom brings the biggest influnce in our family, we had been reading starting from a young age. Almost every weekend, we will go to a near bookstore like Hasani and buy at least one new book 💸📓
+        </p>
+
+        <!-- BIG BOOKSHELF -->
+
+        <div class="bookshelf">
+
+            <div class="gallery-container">
+
+                <div class="gallery-frame">
+
+                    <img src="photo for gallery/photo_2026-05-19_22-49-53.jpg">
+
+                    <div class="caption">
+                        Romance isn't dead yet 🫧💗✨
+                    </div>
+
+                </div>
+
+                <div class="gallery-frame">
+
+                    <img src="photo for gallery/photo_2026-05-19_22-49-35.jpg">
+
+                    <div class="caption">
+                        ִֶ🪽ִֶָFolktales of Mount Ledang Princess ⚔⋆🔮
+                    </div>
+
+                </div>
+
+                <div class="gallery-frame">
+
+                    <img src="photo for gallery/photo_2026-05-19_22-49-26.jpg">
+
+                    <div class="caption">
+                        Zombies in cities but make it local 🧟☠︎
+                    </div>
+
+                </div>
+
+                <div class="gallery-frame">
+
+                    <img src="photo for gallery/photo_2026-05-19_22-49-18.jpg">
+
+                    <div class="caption">
+                        Indonesian romance novel 🫶🏻🥹❤️‍🩹
+                    </div>
+
+                </div>
+
+                <div class="gallery-frame">
+
+                    <img src="photo for gallery/photo_2026-05-19_22-49-43.jpg">
+
+                    <div class="caption">
+                        Young adult thriller on top 📼⋆.˚🎧
+                    </div>
+
+                </div>
+
+                <div class="gallery-frame">
+
+                    <img src="photo for gallery/photo_2026-05-19_22-49-06.jpg">
+
+                    <div class="caption">
+                        Time for some English book! 🕵🏻📽️
+                    </div>
+
+                </div>
+
+                <div class="gallery-frame">
+
+                    <img src="photo for gallery/photo_2026-05-20_23-41-39.jpg">
+
+                    <div class="caption">
+                        Such an eye catching view 🤌🏻👀🤍
+                    </div>
+
+                </div>
+
+                <div class="gallery-frame">
+
+                    <img src="photo for gallery/photo_2026-05-20_23-41-48.jpg">
+
+                    <div class="caption">
+                        𓏲 ๋࣭ ࣪ ˖ 𓌹𔓎𓌺 A horror photocard 🕯
+                    </div>
+
+                </div>
+
+                <div class="gallery-frame">
+
+                    <img src="photo for gallery/photo_2026-05-19_22-50-03.jpg">
+
+                    <div class="caption">
+                        🔋⚡Charging my battery with reading
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <p>
+            🪶📰 People said that readers live a thousand lives before they die, and I agreed. From books I build a deep empathy towards others and become emotional in every story as every single small thing carries an important value either to teach something or as a blessing 🗞️🙌🏻
+        </p>
+
+        <!-- PREVIOUS NEXT & TOP BUTTON -->
+
+        <div class="page-buttons">
+
+            <a href="contact.html" class="previous-page">
+                Previous Page
+            </a>
+
+            <a href="#" class="top-button">
+                Back To Top
+            </a>
+
+            <a href="writing.html" class="next-page">
+                Next Page
+            </a>
+
+        </div>
+
+        <br>
+
+        <!-- BACK HOME -->
+
+        <a href="index.html" class="back-home">
+            🏠 Back To Home
+        </a>
+
+    </div>
+
+    <footer>
+
+        <p>
+            © ๋࣭ ⭑2026 whosenina official website. Best experience on Google Chrome, last updated on third June 2026 ✿
+            ⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Experience Husnina</title>
+
+    <style>
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            background-color: #FFE4E1;
+
+            font-family: Arial, sans-serif;
+
+            text-align: center;
+
+            margin: 0;
+
+            padding: 0;
+        }
+
+        h1 {
+
+            background-color: Plum;
+
+            padding: 18px;
+
+            border-radius: 15px;
+
+            margin: 20px;
+
+            color: white;
+
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        nav {
+
+            margin: 20px 0;
+        }
+
+        nav a {
+
+            text-decoration: none;
+
+            background-color: Plum;
+
+            color: white;
+
+            padding: 12px 20px;
+
+            margin: 5px;
+
+            border-radius: 12px;
+
+            font-size: 18px;
+
+            transition: 0.3s;
+
+            display: inline-block;
+        }
+
+        nav a:hover {
+
+            background-color: HotPink;
+
+            transform: scale(1.1);
+        }
+
+        /* MAIN BOX */
+
+        .experience-box {
+
+            background-color: white;
+
+            width: 75%;
+
+            margin: auto;
+
+            padding: 35px;
+
+            border-radius: 25px;
+
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+
+            color: #C71585;
+
+            font-size: 30px;
+
+            margin-bottom: 30px;
+        }
+
+        /* STORY CARD */
+
+        .experience-card{
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 35px;
+
+            background: linear-gradient(
+                135deg,
+                #FFF0F5,
+                #E6E6FA,
+                #FFE4E1
+            );
+
+            padding: 30px;
+
+            border-radius: 30px;
+
+            margin-top: 35px;
+
+            box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+
+            border: 3px solid #FFD1DC;
+
+            transition: 0.4s;
+
+            text-align: left;
+
+            flex-wrap: wrap;
+        }
+
+        .experience-card:hover{
+
+            transform: translateY(-8px);
+        }
+
+        /* IMAGE */
+
+        .experience-image img{
+
+            width: 260px;
+
+            border-radius: 22px;
+
+            border: 5px solid white;
+
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+
+            display: block;
+        }
+
+        /* VIDEO */
+
+        .experience-image video{
+
+            width: 260px;
+
+            border-radius: 22px;
+
+            border: 5px solid white;
+
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+
+            display: block;
+        }
+
+        /* TEXT */
+
+        .experience-text{
+
+            flex: 1;
+        }
+
+        .experience-title{
+
+            font-size: 28px;
+
+            color: #C71585;
+
+            font-weight: bold;
+
+            margin-bottom: 18px;
+        }
+
+        .experience-text p{
+
+            font-size: 19px;
+
+            line-height: 1.9;
+
+            color: #444;
+        }
+
+        /* PAGE BUTTONS */
+
+        .page-buttons{
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 35px;
+
+            margin-top: 50px;
+
+            flex-wrap: wrap;
+        }
+
+        .previous-page,
+        .next-page,
+        .top-button{
+
+            text-decoration: none;
+
+            color: white;
+
+            padding: 16px 28px;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            transition: 0.4s;
+
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        /* PREVIOUS BUTTON */
+
+        .previous-page{
+
+            background: linear-gradient(
+                135deg,
+                #DB7093,
+                HotPink
+            );
+
+            border-radius: 8px 40px 40px 8px;
+        }
+
+        .previous-page:hover{
+
+            transform: translateX(-10px) scale(1.05);
+
+            background: linear-gradient(
+                135deg,
+                HotPink,
+                #C71585
+            );
+        }
+
+        .previous-page::before{
+
+            content: "⬅";
+
+            margin-right: 10px;
+
+            font-size: 22px;
+        }
+
+        /* TOP BUTTON */
+
+        .top-button{
+
+            background: linear-gradient(
+                135deg,
+                #FFB6C1,
+                Plum
+            );
+
+            border-radius: 40px;
+        }
+
+        .top-button:hover{
+
+            transform: translateY(-6px) scale(1.05);
+
+            background: linear-gradient(
+                135deg,
+                HotPink,
+                #C71585
+            );
+        }
+
+        .top-button::before{
+
+            content: "⬆";
+
+            margin-right: 10px;
+
+            font-size: 22px;
+        }
+
+        /* NEXT BUTTON */
+
+        .next-page{
+
+            background: linear-gradient(
+                135deg,
+                Plum,
+                HotPink
+            );
+
+            border-radius: 40px 8px 8px 40px;
+        }
+
+        .next-page:hover{
+
+            transform: translateX(10px) scale(1.05);
+
+            background: linear-gradient(
+                135deg,
+                HotPink,
+                #C71585
+            );
+        }
+
+        .next-page::after{
+
+            content: "➜";
+
+            margin-left: 10px;
+
+            font-size: 22px;
+        }
+
+        /* BACK HOME */
+
+        .back-home {
+
+            text-decoration: none;
+
+            background-color: #DB7093;
+
+            color: white;
+
+            padding: 12px 20px;
+
+            border-radius: 15px;
+
+            display: inline-block;
+
+            margin-top: 35px;
+
+            font-size: 18px;
+
+            transition: 0.3s;
+        }
+
+        .back-home:hover {
+
+            background-color: #C71585;
+
+            transform: scale(1.1);
+        }
+
+        footer {
+
+            margin-top: 30px;
+
+            padding-bottom: 20px;
+
+            font-size: 16px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- BACKGROUND MUSIC -->
+
+    <audio autoplay loop>
+
+        <source src="audio for home, about, education, interest, contact, experience, gallery and writing/leberch-soft-piano-501446.mp3" type="audio/mpeg">
+
+    </audio>
+
+    <!-- TITLE -->
+
+    <h1><b>─୨ৎ─ My Life Experience ─୨ৎ─</b></h1>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="about.html">About 🎀</a>
+
+        <a href="education.html">Education 🎓</a>
+
+        <a href="interest.html">Interest 🩰</a>
+
+        <a href="contact.html">Contact 💌</a>
+
+        <a href="experience.html">Experience 💪</a>
+
+        <a href="gallery.html">Gallery 📸</a>
+
+        <a href="writing.html">Writing ✒️</a>
+
+    </nav>
+
+    <!-- EXPERIENCE BOX -->
+
+    <div class="experience-box">
+
+        <h2>
+            📽 Experiences of Miss Husnina Along Her Journey For 20 Years Old Living 🚂🚃
+        </h2>
+
+        <!-- STORY CARD 1 -->
+
+        <div class="experience-card">
+
+            <div class="experience-image">
+
+                <img src="photo for experience/photo_2026-05-28_12-50-14.jpg">
+
+            </div>
+
+            <div class="experience-text">
+
+                <div class="experience-title">
+                   Entering TV program for first time
+                </div>
+
+                <p>
+                    Starting from high-school experience, one day during physics class, our teacher Madam Nora told us about the upcoming Didik TV program and she will be the one in charge to do a collaboration with them. Thinking that this was a great chance for me and my friends to try new things, we decided to participate. It turned out to be such a memorable experience because we got to communicate with the host, see how they work backstage and create a rare achievement together with my high-school buddies ✨
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- STORY CARD 2 -->
+
+        <div class="experience-card">
+
+            <div class="experience-image">
+
+                <video controls preload="auto">
+
+                    <source src="video for experience/video_2026-05-28_12-51-05.mp4" type="video/mp4">
+
+                    Your browser does not support the video tag.
+
+                </video>
+
+            </div>
+
+            <div class="experience-text">
+
+                <div class="experience-title">
+                    On the flight to Sabah
+                </div>
+
+                <p>I had my first flight when I was 16 to Sabah, Malaysia. Being so up high in the sky keeps on giving me a little anxiety of what if. Such as, What if the aeroplane lose it control? What if the scene in the movie happens for real? But those thoughts only stayed on the flight, once I reached the land below the wind, I am full of excited and happiness because Sabah is one of the beauty of Malaysia. 
+                                    </p>
+
+            </div>
+
+        </div>
+
+        <!-- STORY CARD 3 -->
+
+        <div class="experience-card">
+
+            <div class="experience-image">
+
+                <img src="photo for experience/photo_2026-05-28_12-51-40.jpg">
+
+            </div>
+
+            <div class="experience-text">
+
+                <div class="experience-title">
+                    Joining Sukan Antara Fakulti (SAF)
+                </div>
+
+                <p> During my second semester, I joined the badminton sports for my faculty. Little did I know, from just this one full day a mix of feeling haunted me. At first still being energetic and confident, but starting to slowly break down from tiredness, not having a proper meal and many provocation. However, I am glad that I got to exprienced a little hardness when God had a better plan. We managed to win the third place and got our own medal!
+                    
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- BUTTONS -->
+
+        <div class="page-buttons">
+
+            <a href="contact.html" class="previous-page">
+                Previous Page
+            </a>
+
+            <a href="#" class="top-button">
+                Back To Top
+            </a>
+
+            <a href="gallery.html" class="next-page">
+                Next Page
+            </a>
+
+        </div>
+
+        <br>
+
+        <!-- BACK HOME -->
+
+        <a href="index.html" class="back-home">
+            🏠 Back To Home
+        </a>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © ๋࣭ ⭑2026 whosenina official website. Best experience on Google Chrome, last updated on third June 2026 ✿
+            ⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Writing Husnina</title>
+
+    <style>
+
+        html{
+
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            background-color: #FFE4E1;
+
+            font-family: Arial, sans-serif;
+
+            text-align: center;
+
+            margin: 0;
+
+            padding: 0;
+        }
+
+        /* TITLE */
+
+        h1 {
+
+            background-color: Plum;
+
+            padding: 18px;
+
+            border-radius: 15px;
+
+            margin: 20px;
+
+            color: white;
+
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+
+            color: #C71585;
+
+            font-size: 30px;
+
+            margin-bottom: 20px;
+
+            line-height: 1.7;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+
+            margin: 20px 0;
+        }
+
+        nav a {
+
+            text-decoration: none;
+
+            background-color: Plum;
+
+            color: white;
+
+            padding: 12px 20px;
+
+            margin: 5px;
+
+            border-radius: 12px;
+
+            font-size: 18px;
+
+            transition: 0.3s;
+
+            display: inline-block;
+        }
+
+        nav a:hover {
+
+            background-color: HotPink;
+
+            transform: scale(1.1);
+        }
+
+        /* WRITING BOX */
+
+        .writing-box {
+
+            background-color: white;
+
+            width: 85%;
+
+            margin: auto;
+
+            padding: 40px;
+
+            border-radius: 25px;
+
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        /* WHITE CLOUD BACKGROUND */
+
+        .writing-box::before,
+        .writing-box::after{
+
+            content:"";
+
+            position:absolute;
+
+            background: rgba(255,255,255,0.8);
+
+            border-radius:50%;
+
+            z-index:0;
+        }
+
+        .writing-box::before{
+
+            width:250px;
+
+            height:250px;
+
+            top:-90px;
+
+            left:-60px;
+        }
+
+        .writing-box::after{
+
+            width:280px;
+
+            height:280px;
+
+            bottom:-120px;
+
+            right:-70px;
+        }
+
+        .extra-cloud{
+
+            position:absolute;
+
+            width:200px;
+
+            height:200px;
+
+            background: rgba(255,255,255,0.6);
+
+            border-radius:50%;
+
+            top:200px;
+
+            right:100px;
+
+            z-index:0;
+        }
+
+        /* BOOK CONTAINER */
+
+        .book-container{
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:stretch;
+
+            margin-top:45px;
+
+            flex-wrap:wrap;
+
+            position:relative;
+
+            z-index:2;
+        }
+
+        /* BOOK PAGES */
+
+        .book-page{
+
+            background:#FFFDF7;
+
+            width:390px;
+
+            min-height:720px;
+
+            padding:45px;
+
+            text-align:left;
+
+            box-shadow:0 8px 18px rgba(0,0,0,0.15);
+
+            position:relative;
+
+            font-family: Georgia, serif;
+        }
+
+        .left-page{
+
+            border-radius:25px 0 0 25px;
+
+            border-right:4px dashed #E8CFCF;
+        }
+
+        .right-page{
+
+            border-radius:0 25px 25px 0;
+        }
+
+        /* PAPER LINE */
+
+        .book-page::before{
+
+            content:"";
+
+            position:absolute;
+
+            top:0;
+
+            bottom:0;
+
+            left:35px;
+
+            width:2px;
+
+            background:#F3D7D7;
+        }
+
+        /* PAGE TITLE */
+
+        .page-title{
+
+            color:#C71585;
+
+            font-size:32px;
+
+            margin-bottom:18px;
+
+            text-align:center;
+        }
+
+        .date{
+
+            color:#DB7093;
+
+            font-size:17px;
+
+            font-style:italic;
+
+            margin-bottom:28px;
+
+            text-align:center;
+        }
+
+        /* PARAGRAPH */
+
+        .book-page p{
+
+            font-size:20px;
+
+            line-height:2.2;
+
+            color:#444;
+
+            text-indent:45px;
+
+            margin-bottom:22px;
+
+            text-align:justify;
+
+            padding-left:18px;
+
+            padding-right:10px;
+        }
+
+        /* QUOTE */
+
+        .little-quote{
+
+            margin-top:40px;
+
+            text-align:center;
+
+            color:#C71585;
+
+            font-style:italic;
+
+            font-size:18px;
+        }
+
+        /* PAGE NUMBER */
+
+        .page-number{
+
+            position:absolute;
+
+            bottom:20px;
+
+            right:35px;
+
+            color:#C71585;
+
+            font-size:18px;
+
+            font-style:italic;
+        }
+
+        /* PAGE BUTTONS */
+
+        .page-buttons{
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            gap:28px;
+
+            margin-top:55px;
+
+            flex-wrap:wrap;
+
+            position:relative;
+
+            z-index:2;
+        }
+
+        .previous-page,
+        .next-page,
+        .top-button{
+
+            text-decoration:none;
+
+            color:white;
+
+            padding:16px 30px;
+
+            font-size:20px;
+
+            font-weight:bold;
+
+            transition:0.4s;
+
+            box-shadow:0 6px 15px rgba(0,0,0,0.2);
+
+            display:inline-flex;
+
+            align-items:center;
+
+            justify-content:center;
+        }
+
+        /* PREVIOUS BUTTON */
+
+        .previous-page{
+
+            background: linear-gradient(
+                135deg,
+                #DB7093,
+                HotPink
+            );
+
+            border-radius:8px 40px 40px 8px;
+        }
+
+        .previous-page:hover{
+
+            transform: translateX(-10px) scale(1.05);
+
+            background: linear-gradient(
+                135deg,
+                HotPink,
+                #C71585
+            );
+        }
+
+        .previous-page::before{
+
+            content:"⬅";
+
+            margin-right:10px;
+
+            font-size:22px;
+        }
+
+        /* TOP BUTTON */
+
+        .top-button{
+
+            background: linear-gradient(
+                135deg,
+                #FFB6C1,
+                Plum
+            );
+
+            border-radius:40px;
+        }
+
+        .top-button:hover{
+
+            transform: translateY(-6px) scale(1.05);
+
+            background: linear-gradient(
+                135deg,
+                HotPink,
+                #C71585
+            );
+        }
+
+        .top-button::before{
+
+            content:"⬆";
+
+            margin-right:10px;
+
+            font-size:22px;
+        }
+
+        /* NEXT BUTTON */
+
+        .next-page{
+
+            background: linear-gradient(
+                135deg,
+                Plum,
+                HotPink
+            );
+
+            border-radius:40px 8px 8px 40px;
+        }
+
+        .next-page:hover{
+
+            transform: translateX(10px) scale(1.05);
+
+            background: linear-gradient(
+                135deg,
+                HotPink,
+                #C71585
+            );
+        }
+
+        .next-page::after{
+
+            content:"➜";
+
+            margin-left:10px;
+
+            font-size:22px;
+        }
+
+        /* BACK HOME */
+
+        .back-home {
+
+            text-decoration:none;
+
+            background-color:#DB7093;
+
+            color:white;
+
+            padding:12px 20px;
+
+            border-radius:15px;
+
+            display:inline-block;
+
+            margin-top:35px;
+
+            font-size:18px;
+
+            transition:0.3s;
+
+            position:relative;
+
+            z-index:2;
+        }
+
+        .back-home:hover {
+
+            background-color:#C71585;
+
+            transform:scale(1.1);
+        }
+
+        /* FOOTER */
+
+        footer {
+
+            margin-top:30px;
+
+            padding-bottom:20px;
+
+            font-size:16px;
+
+            color:#8B3A62;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- BACKGROUND MUSIC -->
+
+    <audio autoplay loop>
+
+        <source src="audio for home, about, education, interest, contact, experience, gallery and writing/leberch-soft-piano-501446.mp3" type="audio/mpeg">
+
+    </audio>
+
+    <!-- TITLE -->
+
+    <h1>
+
+        <b>
+            ─୨ৎ─ Husnina Writing Space ─୨ৎ─
+        </b>
+
+    </h1>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="about.html">About 🎀</a>
+
+        <a href="education.html">Education 🎓</a>
+
+        <a href="interest.html">Interest 🩰</a>
+
+        <a href="contact.html">Contact 💌</a>
+
+        <a href="exprience.html">Experience 💪</a>
+
+        <a href="gallery.html">Gallery 📸</a>
+
+        <a href="writing.html">Writing ✒️</a>
+
+    </nav>
+
+    <!-- WRITING BOX -->
+
+    <div class="writing-box">
+
+        <div class="extra-cloud"></div>
+
+        <h2>
+
+            Every soul has their own story to share,
+            and here is mine...
+
+        </h2>
+
+        <!-- BOOK CONTAINER -->
+
+        <div class="book-container">
+
+            <!-- LEFT PAGE -->
+
+            <div class="book-page left-page">
+
+                <div class="page-title">
+
+                   🫸🏻 Hello World 🫷🏻
+
+                </div>
+
+                <div class="date">
+
+                    Wonder what kind of rain and night dinasours used to see?
+
+                </div>
+
+                <p>
+
+                    I love the quietness side of the world.
+                    When the sun starts changing shifts with
+                    the night and darkness slowly dominates
+                    the sky, it speaks to me like an old friend
+                    who feels excited to meet again.
+
+                </p>
+
+                <p>
+
+                    I love when it rains and the water pours
+                    softly into the lake which in my mind it does look like a shining crystal sprinkle falling to give the earth some extra decorations. Much more lucky if rainbow decided to appear after the rain to steal the spotlight for a moment since rainbow rarely shown up.</p>
+
+              
+                <div class="little-quote">
+
+                    “Night rain brings rainbow to me.” 🪽
+
+                </div>
+
+                <div class="page-number">
+
+                    page 01
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT PAGE -->
+
+            <div class="book-page right-page">
+
+                <div class="page-title">
+
+                    What is inside that small head?
+
+                </div>
+
+                <div class="date">
+
+                    A curiousity that should be studied.
+
+                </div>
+
+                <p> When I look at my cats, I always end up wondering what is inside their head actually? Like what are they talking about when they meet another cat or another animals such as bird, ant or dog? I do wish we have a machine or technology to understand the languages of animals so maybe we can learnt more about them. But surely I can understand very well, that meow meow before dinner is "I am hungry, feed me now".
+
+                </p>
+
+<p> Big shout out to my lovely cats 🐱: Sleepy, Mochi, Gebu and hero. (and many other cats that have been into my life, love you guys ❤️)
+                
+                <div class="little-quote">
+
+                    “Cats are cute, so are you"
+
+                </div>
+
+                <div class="page-number">
+
+                    page 02
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PAGE BUTTONS -->
+
+        <div class="page-buttons">
+
+            <a href="gallery.html" class="previous-page">
+
+                Previous Page
+
+            </a>
+
+            <a href="#" class="top-button">
+
+                Back To Top
+
+            </a>
+
+            <a href="index.html" class="next-page">
+
+                Home Page
+
+            </a>
+
+        </div>
+
+        <br>
+
+        <!-- BACK HOME -->
+
+        <a href="index.html" class="back-home">
+
+            🏠 Back To Home
+
+        </a>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+
+            © ๋࣭ ⭑2026 whosenina official website. Best experience on Google Chrome, last updated on third June 2026 ✿
+            ⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖
+
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

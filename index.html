@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>My Website</title>
+
+    <style>
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            background: linear-gradient(
+                180deg,
+                #FFE4E1,
+                #FFF0F5,
+                #FFE4E1
+            );
+
+            font-family: Arial, sans-serif;
+
+            text-align: center;
+
+            margin: 0;
+
+            padding: 0;
+        }
+
+        /* HEADER IMAGE */
+
+        .header-image {
+
+            width: 100%;
+
+            height: 550px;
+
+            object-fit: cover;
+
+            display: block;
+
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+
+        /* NAVIGATION */
+
+        nav {
+
+            margin: 30px 0;
+        }
+
+        nav a {
+
+            text-decoration: none;
+
+            background: linear-gradient(
+                135deg,
+                Plum,
+                HotPink
+            );
+
+            color: white;
+
+            padding: 14px 24px;
+
+            margin: 6px;
+
+            border-radius: 15px;
+
+            font-size: 18px;
+
+            transition: 0.4s;
+
+            display: inline-block;
+
+            box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+        }
+
+        nav a:hover {
+
+            transform: translateY(-5px) scale(1.08);
+
+            background: linear-gradient(
+                135deg,
+                HotPink,
+                #C71585
+            );
+        }
+
+        /* MAIN INTRO BOX */
+
+        .intro-box{
+
+            background-color: white;
+
+            width: 78%;
+
+            margin: auto;
+
+            padding: 35px;
+
+            border-radius: 30px;
+
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        h2 {
+
+            color: #C71585;
+
+            font-size: 34px;
+
+            margin-top: 10px;
+
+            line-height: 1.6;
+        }
+
+        p {
+
+            font-size: 19px;
+
+            line-height: 1.9;
+
+            color: #444;
+
+            padding-left: 15px;
+
+            padding-right: 15px;
+        }
+
+        /* CUTE PHOTO SECTION */
+
+        .photo-container {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 35px;
+
+            flex-wrap: wrap;
+
+            margin-top: 40px;
+
+            margin-bottom: 40px;
+        }
+
+        /* POLAROID */
+
+        .polaroid {
+
+            background: linear-gradient(
+                180deg,
+                #FFFFFF,
+                #FFF0F5
+            );
+
+            padding: 15px 15px 35px 15px;
+
+            border-radius: 30px;
+
+            box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+
+            width: 230px;
+
+            transition: 0.4s;
+
+            position: relative;
+
+            border: 4px solid white;
+        }
+
+        .polaroid:hover {
+
+            transform: translateY(-10px) rotate(2deg) scale(1.03);
+        }
+
+        /* STICKERS */
+
+        .polaroid::before {
+
+            content: "☁️";
+
+            font-size: 30px;
+
+            position: absolute;
+
+            top: -18px;
+
+            left: -10px;
+        }
+
+        .polaroid::after {
+
+            content: "🪽";
+
+            font-size: 25px;
+
+            position: absolute;
+
+            bottom: -12px;
+
+            right: -8px;
+        }
+
+        .polaroid img {
+
+            width: 100%;
+
+            border-radius: 20px;
+
+            display: block;
+        }
+
+        .caption {
+
+            margin-top: 14px;
+
+            font-size: 16px;
+
+            color: #C71585;
+
+            background-color: #FFF0F5;
+
+            padding: 10px;
+
+            border-radius: 15px;
+
+            font-weight: bold;
+
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+        }
+
+        /* WELCOME BUTTON */
+
+        .welcome-button{
+
+            text-decoration: none;
+
+            display: inline-block;
+
+            margin-top: 20px;
+
+            background: linear-gradient(
+                135deg,
+                Plum,
+                HotPink
+            );
+
+            color: white;
+
+            padding: 16px 30px;
+
+            border-radius: 40px;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            transition: 0.4s;
+
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .welcome-button:hover{
+
+            transform: scale(1.08);
+
+            background: linear-gradient(
+                135deg,
+                HotPink,
+                #C71585
+            );
+        }
+
+        /* FOOTER */
+
+        footer {
+
+            margin-top: 40px;
+
+            font-size: 16px;
+
+            padding: 20px;
+
+            color: #8B3A62;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- BACKGROUND MUSIC -->
+
+    <audio autoplay loop>
+        <source src="audio for home, about, education, interest, contact, experience, gallery and writing/leberch-soft-piano-501446.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- HEADER IMAGE -->
+
+    <img src="photo for home/Screenshot 2026-05-27 184339.png"
+    class="header-image">
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="about.html">About 🎀</a>
+
+        <a href="education.html">Education 🎓</a>
+
+        <a href="interest.html">Interest 🩰</a>
+
+        <a href="contact.html">Contact 💌</a>
+
+        <a href="exprience.html">Experience 💪</a>
+
+        <a href="gallery.html">Gallery 📸</a>
+
+        <a href="writing.html">Writing ✒️</a>
+
+    </nav>
+
+    <!-- INTRO BOX -->
+
+    <div class="intro-box">
+
+        <h2>
+
+            𝄞⨾💿✮˚.⋆ Once Upon A Time, there lived a naughty kid
+            that grew up into a beautiful woman
+            ִֶָ𓂃 ࣪ ִֶָ🐇་༘࿐
+
+        </h2>
+
+        <p>
+
+            A very warm hug to my lovely visitors 🤍
+            Since this is your first visit, I just want to make sure
+            you are ready for this tiny adventurous journey through
+            my humble little website filled with memories, emotions,
+            dreams and random magical moments ₍₍⚞(˶˃ ꒳ ˂˶)⚟⁾⁾
+
+        </p>
+
+        <!-- BUTTON -->
+
+        <a href="about.html" class="welcome-button">
+            ✨ Start Exploring ✨
+        </a>
+
+        <!-- PHOTO SECTION -->
+
+        <div class="photo-container">
+
+            <div class="polaroid">
+
+                <img src="photo for home/photo_2026-02-07_16-08-31.jpg">
+
+                <div class="caption">
+                    ୧⍤⃝📷 one-of-a-kind ☕︎
+                </div>
+
+            </div>
+
+            <div class="polaroid">
+
+                <img src="photo for home/photo_2024-03-09_19-30-10.jpg">
+
+                <div class="caption">
+                    ࣪ ִֶָ☾. Ethereal ☁︎
+                </div>
+
+            </div>
+
+            <div class="polaroid">
+
+                <img src="photo for home/photo_2023-08-31_14-26-36.jpg">
+
+                <div class="caption">
+                    𓍯𓂃 She was a fairy 𐦍
+                </div>
+
+            </div>
+
+        </div>
+
+        <p>
+
+           This is me 🌷
+           I know I might be too cute for this website,
+           but feel free to use the navigation above
+           to explore more about Miss Husnina
+           𐔌՞ ܸ.ˬ.ܸ՞𐦯
+
+        </p>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+
+            © ๋࣭ ⭑2026 whosenina official website.
+            Best experience on Google Chrome, last updated on third June 2026 ✿
+
+            <br><br>
+
+            ⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖
+
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

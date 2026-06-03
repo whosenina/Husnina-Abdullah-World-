@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Interest Husnina</title>
+
+    <style>
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #FFE4E1;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: Plum;
+            padding: 18px;
+            border-radius: 15px;
+            margin: 20px;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            background-color: Plum;
+            color: white;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 12px;
+            font-size: 18px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: HotPink;
+            transform: scale(1.1);
+        }
+
+        .interest-box {
+            background-color: white;
+            width: 75%;
+            margin: auto;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            color: #C71585;
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        /* ADVENTURE PHONE FRAME */
+
+        .photo-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .phone-frame {
+
+            background: linear-gradient(
+                180deg,
+                #ffffff,
+                #FFF0F5,
+                #E0FFFF
+            );
+
+            padding: 14px;
+            border-radius: 35px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+            position: relative;
+            border: 5px solid white;
+
+            background-image:
+            radial-gradient(circle at top left, #FFD700 5%, transparent 20%),
+            radial-gradient(circle at bottom right, #87CEFA 5%, transparent 20%),
+            radial-gradient(circle at top right, #FFB6C1 5%, transparent 20%);
+        }
+
+        .phone-frame::before {
+            content: "";
+            width: 75px;
+            height: 12px;
+            background-color: #ddd;
+            border-radius: 20px;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .phone-frame img {
+            width: 200px;
+            border-radius: 25px;
+            margin-top: 18px;
+            display: block;
+        }
+
+        .phone-frame:hover {
+            transform: translateY(-10px) rotate(2deg);
+            transition: 0.4s;
+        }
+
+        .sticker {
+            position: absolute;
+            top: -15px;
+            right: -10px;
+            font-size: 35px;
+            transform: rotate(10deg);
+        }
+
+        .frame-text {
+            color: #C71585;
+            font-size: 16px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* CHAT STYLE */
+
+        .chat-container{
+            margin-top: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            align-items: flex-start;
+        }
+
+        .chat-left,
+        .chat-right{
+
+            max-width: 75%;
+            padding: 15px 20px;
+            border-radius: 25px;
+            font-size: 18px;
+            line-height: 1.7;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.12);
+        }
+
+        .chat-left{
+
+            background-color: #FFE4F2;
+            color: #C71585;
+            border-bottom-left-radius: 5px;
+        }
+
+        .chat-right{
+
+            background-color: #E6E6FA;
+            color: #8A2BE2;
+            margin-left: auto;
+            border-bottom-right-radius: 5px;
+        }
+
+        /* IMAGE AS LINK STYLE */
+
+        .link-gallery{
+
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .link-card{
+
+            background: linear-gradient(
+                180deg,
+                #FFF0F5,
+                #E6E6FA
+            );
+
+            padding: 15px;
+            border-radius: 30px;
+            width: 220px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+            transition: 0.4s;
+            border: 4px solid white;
+        }
+
+        .link-card:hover{
+
+            transform: translateY(-10px) scale(1.03);
+        }
+
+        .link-card img{
+
+            width: 100%;
+            border-radius: 20px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .image-link{
+
+            text-decoration: none;
+            background-color: Plum;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 15px;
+            display: inline-block;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .image-link:hover{
+
+            background-color: HotPink;
+            transform: scale(1.05);
+        }
+
+        /* PAGE BUTTONS */
+
+        .page-buttons{
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin-top: 45px;
+            flex-wrap: wrap;
+        }
+
+        .previous-page,
+        .next-page,
+        .back-top{
+
+            text-decoration: none;
+            color: white;
+            padding: 16px 28px;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            transition: 0.4s;
+        }
+
+        /* PREVIOUS BUTTON */
+
+        .previous-page{
+
+            background: linear-gradient(
+                135deg,
+                #DB7093,
+                HotPink
+            );
+
+            border-radius: 8px 40px 40px 8px;
+        }
+
+        .previous-page:hover{
+
+            transform: translateX(-10px) scale(1.05);
+
+            background: linear-gradient(
+                135deg,
+                HotPink,
+                #C71585
+            );
+        }
+
+        .previous-page::before{
+
+            content: "⬅";
+
+            margin-right: 12px;
+
+            font-size: 22px;
+        }
+
+        /* BACK TO TOP BUTTON */
+
+        .back-top{
+
+            background: linear-gradient(
+                135deg,
+                #FFB6C1,
+                Plum
+            );
+
+            border-radius: 40px;
+        }
+
+        .back-top:hover{
+
+            transform: translateY(-8px) scale(1.05);
+
+            background: linear-gradient(
+                135deg,
+                HotPink,
+                #C71585
+            );
+        }
+
+        .back-top::before{
+
+            content: "⬆";
+
+            margin-right: 10px;
+
+            font-size: 22px;
+        }
+
+        /* NEXT BUTTON */
+
+        .next-page{
+
+            background: linear-gradient(
+                135deg,
+                Plum,
+                HotPink
+            );
+
+            border-radius: 40px 8px 8px 40px;
+        }
+
+        .next-page:hover{
+
+            transform: translateX(10px) scale(1.05);
+
+            background: linear-gradient(
+                135deg,
+                HotPink,
+                #C71585
+            );
+        }
+
+        .next-page::after{
+
+            content: "➜";
+
+            margin-left: 12px;
+
+            font-size: 22px;
+        }
+
+        .back-home {
+            text-decoration: none;
+            background-color: #DB7093;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .back-home:hover {
+            background-color: #C71585;
+            transform: scale(1.1);
+        }
+
+        footer {
+            margin-top: 30px;
+            padding-bottom: 20px;
+            font-size: 16px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- BACKGROUND MUSIC -->
+
+    <audio autoplay loop>
+        <source src="audio for home, about, education, interest, contact, experience, gallery and writing/leberch-soft-piano-501446.mp3" type="audio/mpeg">
+    </audio>
+
+    <h1>
+        <b>───୨ৎ─── Here Is My Curiosity Adventure Dump ───୨ৎ───</b>
+    </h1>
+
+    <nav>
+        <a href="about.html">About 🎀</a>
+        <a href="education.html">Education 🎓</a>
+        <a href="interest.html">Interest 🩰</a>
+        <a href="contact.html">Contact 💌</a>
+        <a href="exprience.html">Experience 💪</a>
+        <a href="gallery.html">Gallery 📸</a>
+        <a href="writing.html">Writing ✒️</a>
+    </nav>
+
+    <div class="interest-box">
+
+        <h2>
+            ✮⋆˙ The Truth About Husnina Interest That No One Tells You 🫣 ✮⋆˙
+        </h2>
+
+        <p>
+            Everyone have their own preferrence on what they want to do and spend their time during free moment, for my cup of tea, I am more into physical activities because it gives me a main character syndrome since I love to daydream a lot. Explore the world freely and see with your own eyes how beautiful others nature creatures made by <i>God</i>.
+        </p>
+
+        <!-- ADVENTURE PHONE FRAME IMAGES -->
+
+        <div class="photo-container">
+
+            <div class="phone-frame">
+
+                <div class="sticker">☁️</div>
+
+                <img src="photo for interest/photo_2026-05-18_19-15-51.jpg">
+
+                <p class="frame-text">
+                    🪂 Adrenaline booster 🌊
+                </p>
+
+            </div>
+
+            <div class="phone-frame">
+
+                <div class="sticker">⛰️</div>
+
+                <img src="photo for interest/photo_2026-05-18_19-15-41.jpg">
+
+                <p class="frame-text">
+                    🪵 Back to nature 🍃
+                </p>
+
+            </div>
+
+            <div class="phone-frame">
+
+                <div class="sticker">🧭</div>
+
+                <img src="photo for interest/photo_2026-05-18_19-42-17.jpg">
+
+                <p class="frame-text">
+                    ☁️ Up with birds 🕊️
+                </p>
+
+            </div>
+
+        </div>
+
+        <p>
+            🫧𓇼𓏲*ੈ✩‧₊˚🎐 I have always been the girl that fall right into the trap of adventurous thing. The adrenaline everytime we go to a place bit higher in the air makes me feel alive as I can breathe on the sky and look down to the ground with bless 🍃˚.⛰️⋆☁️.
+        </p>
+
+        <!-- CHAT STYLE -->
+
+        <div class="chat-container">
+
+            <div class="chat-left">
+                🤩 What else catches Husnina attention? 📍
+            </div>
+
+            <div class="chat-right">
+                ❀˖° Husnina will definitely heal her inner child with lots of cute things 🫶🏻 More board games, aesthetic brick lego and playful creative games ໒꒰ྀིっ˕ -｡꒱ྀི১
+            </div>
+
+        </div>
+
+        <!-- IMAGE AS LINK -->
+
+        <div class="link-gallery">
+
+            <!-- LEGO -->
+
+            <div class="link-card">
+
+                <a href="https://en.wikipedia.org/wiki/Lego_minifigure"
+                target="_blank">
+
+                    <img src="photo for interest/photo_2026-05-26_11-55-30.jpg">
+
+                </a>
+
+                <a href="https://en.wikipedia.org/wiki/Lego_minifigure"
+                target="_blank"
+                class="image-link">
+
+                    🧸 Click here to know more about Lego Minifigure ₍ᵔ.˛.ᵔ₎
+
+                </a>
+
+            </div>
+
+            <!-- SNAKES & LADDERS -->
+
+            <div class="link-card">
+
+                <a href="https://en.wikipedia.org/wiki/Snakes_and_ladders"
+                target="_blank">
+
+                    <img src="photo for interest/photo_2026-05-26_11-56-18.jpg">
+
+                </a>
+
+                <a href="https://en.wikipedia.org/wiki/Snakes_and_ladders"
+                target="_blank"
+                class="image-link">
+
+                    🎲 Click me for details of Snakes 🐍 & Ladders 🪜 game ✨
+
+                </a>
+
+            </div>
+
+            <!-- WIZARD CHESS -->
+
+            <div class="link-card">
+
+                <a href="https://harrypotter.fandom.com/wiki/Wizard%27s_Chess"
+                target="_blank">
+
+                    <img src="photo for interest/photo_2026-05-26_11-56-30.jpg">
+
+                </a>
+
+                <a href="https://harrypotter.fandom.com/wiki/Wizard%27s_Chess"
+                target="_blank"
+                class="image-link">
+
+                    ♟️ Warm welcoming about Wizard Chess 🪄
+
+                </a>
+
+            </div>
+
+            <!-- POISON CANDY -->
+
+            <div class="link-card">
+
+                <a href="https://deltiasgaming.com/roblox-how-to-play-poison-candy/"
+                target="_blank">
+
+                    <img src="photo for interest/photo_2026-05-26_11-56-43.jpg">
+
+                </a>
+
+                <a href="https://deltiasgaming.com/roblox-how-to-play-poison-candy/"
+                target="_blank"
+                class="image-link">
+
+                    🍭 What is Poison Candy game? 🤢🍬
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <p>
+            These activities can makes me forget about the world as I stuck in laugh and enjoyable moment with people that I am comfortable with. Free from stress equal to happy Husnina ── ⟡ ˙🌱 ̟
+        </p>
+
+        <!-- PREVIOUS + BACK TO TOP + NEXT -->
+
+        <div class="page-buttons">
+
+            <a href="education.html" class="previous-page">
+                Previous Page
+            </a>
+
+            <a href="#" class="back-top">
+                Back To Top
+            </a>
+
+            <a href="contact.html" class="next-page">
+                Next Page
+            </a>
+
+        </div>
+
+        <br>
+
+        <a href="index.html" class="back-home">
+            🏠 Back To Home
+        </a>
+
+    </div>
+
+    <footer>
+
+        <p>
+            © ๋࣭ ⭑2026 whosenina official website. Best experience on Google Chrome, last updated on third June 2026 ✿
+            ⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

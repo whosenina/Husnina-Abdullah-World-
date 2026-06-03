@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Education Husnina</title>
+
+    <style>
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #FFE4E1;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: Plum;
+            padding: 18px;
+            border-radius: 15px;
+            margin: 20px;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            background-color: Plum;
+            color: white;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 12px;
+            font-size: 18px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: HotPink;
+            transform: scale(1.1);
+        }
+
+        .education-box {
+            background-color: white;
+            width: 70%;
+            margin: auto;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            color: #C71585;
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        /* PRETTY UNDERLINE LINK */
+
+        .uitm-link {
+
+            color: #C71585;
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            text-decoration: underline;
+
+            text-decoration-thickness: 3px;
+
+            text-underline-offset: 6px;
+
+            transition: 0.3s;
+
+            display: inline-block;
+
+            margin-top: 10px;
+        }
+
+        .uitm-link:hover {
+
+            color: HotPink;
+
+            transform: scale(1.05);
+        }
+
+        .uitm-link:visited {
+
+            color: #9370DB;
+        }
+
+        /* CUTE EDUCATION TABLE */
+
+        .edu-table {
+
+            width: 90%;
+
+            margin: 30px auto;
+
+            border-collapse: collapse;
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        .edu-table th {
+
+            background: linear-gradient(
+                135deg,
+                Plum,
+                HotPink
+            );
+
+            color: white;
+
+            padding: 16px;
+
+            font-size: 20px;
+        }
+
+        .edu-table td {
+
+            background-color: #FFF0F5;
+
+            padding: 16px;
+
+            font-size: 18px;
+
+            border: 2px solid #FFD1DC;
+        }
+
+        .edu-table tr:hover td {
+
+            background-color: #FFE4E1;
+
+            transition: 0.3s;
+        }
+
+        .school-link {
+
+            color: #C71585;
+
+            font-weight: bold;
+
+            text-decoration: underline;
+
+            text-decoration-thickness: 2px;
+
+            text-underline-offset: 5px;
+
+            transition: 0.3s;
+        }
+
+        .school-link:hover {
+
+            color: HotPink;
+        }
+
+        .school-link:visited {
+
+            color: #9370DB;
+        }
+
+        /* PAGE BUTTONS */
+
+        .page-buttons{
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+
+            margin-top: 40px;
+        }
+
+        .previous-page,
+        .next-page,
+        .back-top{
+
+            text-decoration: none;
+
+            color: white;
+
+            padding: 16px 28px;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            transition: 0.4s;
+
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        /* PREVIOUS BUTTON */
+
+        .previous-page{
+
+            background: linear-gradient(
+                135deg,
+                #DB7093,
+                HotPink
+            );
+
+            border-radius: 8px 40px 40px 8px;
+        }
+
+        .previous-page:hover{
+
+            transform: translateX(-10px) scale(1.05);
+
+            background: linear-gradient(
+                135deg,
+                HotPink,
+                #C71585
+            );
+        }
+
+        .previous-page::before{
+
+            content: "⬅ ";
+
+            margin-right: 8px;
+        }
+
+        /* BACK TO TOP BUTTON */
+
+        .back-top{
+
+            background: linear-gradient(
+                135deg,
+                #FF9ECF,
+                Plum
+            );
+
+            border-radius: 40px;
+        }
+
+        .back-top:hover{
+
+            transform: scale(1.08);
+
+            background: linear-gradient(
+                135deg,
+                HotPink,
+                #C71585
+            );
+        }
+
+        .back-top::before{
+
+            content: "⬆ ";
+
+            margin-right: 8px;
+        }
+
+        /* NEXT BUTTON */
+
+        .next-page{
+
+            background: linear-gradient(
+                135deg,
+                Plum,
+                HotPink
+            );
+
+            border-radius: 40px 8px 8px 40px;
+        }
+
+        .next-page:hover{
+
+            transform: translateX(10px) scale(1.05);
+
+            background: linear-gradient(
+                135deg,
+                HotPink,
+                #C71585
+            );
+        }
+
+        .next-page::after{
+
+            content: " ➜";
+
+            margin-left: 10px;
+        }
+
+        .back-home {
+            text-decoration: none;
+            background-color: #DB7093;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .back-home:hover {
+            background-color: #C71585;
+            transform: scale(1.1);
+        }
+
+        footer {
+            margin-top: 30px;
+            padding-bottom: 20px;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+
+<body id="top">
+
+    <!-- BACKGROUND MUSIC -->
+
+    <audio autoplay loop>
+        <source src="audio for home, about, education, interest, contact, experience, gallery and writing/leberch-soft-piano-501446.mp3" type="audio/mpeg">
+    </audio>
+
+    <h1><b>─୨ৎ─ My Education Journey ─୨ৎ─</b></h1>
+
+    <nav>
+        <a href="about.html">About 🎀</a>
+        <a href="education.html">Education 🎓</a>
+        <a href="interest.html">Interest 🩰</a>
+        <a href="contact.html">Contact 💌</a>
+        <a href="exprience.html">Experience 💪</a>
+        <a href="gallery.html">Gallery 📸</a>
+        <a href="writing.html">Writing ✒️</a>
+    </nav>
+
+    <div class="education-box">
+
+        <h2>👩🏻‍💻📓 Knowledge and Academic Flow ✍🏻💡</h2>
+
+        <p>
+            ✦•┈๑⋅⋯ Without knowledge, human are just like a part
+            of living organism with no curiosity, innovation and intelligent.
+            𖥔 ݁ ˖ִ🛸༄˖°.⋯⋅๑┈•✦
+        </p>
+
+        <p>
+            Starting from little, I started to enter kindergarten from
+            5 years old until 6 years old (2 Years).
+            My first learning exprience with others little friends
+            was at Tadika Cahayaku al-Itqan.
+        </p>
+
+        <p>
+           Then, I moved into primary school at SK Air Merah
+           until I finished my UPSR.
+           Alhamdulillah, I managed to get 5A 1B for my UPSR result.
+        </p>
+
+        <!-- EDUCATION TABLE -->
+
+        <table class="edu-table">
+
+            <tr>
+                <th>🎓 School Era ⋅˚₊‧ ୨🕮୧ ‧₊˚ ⋅</th>
+                <th>🏫 School Online Platform</th>
+            </tr>
+
+            <tr>
+                <td>🤓🎒 Primary School</td>
+
+                <td>
+                    <a href="https://www.facebook.com/skamsbtkbb/?locale=ms_MY"
+                    target="_blank"
+                    class="school-link">
+
+                        SK Air Merah
+
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>First High-School 👩‍🎓</td>
+
+                <td>
+                    <a href="https://badlishah.edu.my/"
+                    target="_blank"
+                    class="school-link">
+
+                        SMK Sultan Badlishah
+
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Second High-School 👩‍🎓</td>
+
+                <td>
+                    <a href="https://www.facebook.com/smkairmerah/?locale=ms_MY"
+                    target="_blank"
+                    class="school-link">
+
+                        SMK Air Merah
+
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Graduated High-School 👩‍🎓</td>
+
+                <td>
+                    <a href="https://www.facebook.com/smkpenantirasmi/?locale=ms_MY"
+                    target="_blank"
+                    class="school-link">
+
+                        SMK Penanti
+
+                    </a>
+                </td>
+            </tr>
+
+        </table>
+
+        <p>
+            Now, currently I am studying at Universiti Teknologi Mara
+            Kedah branch at Merbok, Sungai Petani.
+            I am pursuing my diploma in Library Informatics.
+        </p>
+
+        <!-- EXTERNAL WEBSITE LINK -->
+
+        <p>
+            👇🏻 Click the cute link down there to visit my University UiTM Kedah website 👇🏻
+        </p>
+
+        <a href="https://kedah.uitm.edu.my/"
+        target="_blank"
+        class="uitm-link">
+
+            🎓 Digital tour to UiTM Kedah Website 🏛️
+
+        </a>
+
+        <!-- PAGE BUTTONS -->
+
+        <div class="page-buttons">
+
+            <a href="about.html" class="previous-page">
+                Previous Page
+            </a>
+
+            <a href="#top" class="back-top">
+                Back To Top
+            </a>
+
+            <a href="interest.html" class="next-page">
+                Next Page
+            </a>
+
+        </div>
+
+        <br>
+
+        <a href="index.html" class="back-home">
+            🏠 Back To Home
+        </a>
+
+    </div>
+
+    <footer>
+        <p>
+            © ๋࣭ ⭑2026 whosenina official website. Best experience on Google Chrome, last updated on third June 2026 ✿
+            ⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖
+        </p>
+    </footer>
+
+</body>
+
+</html>
