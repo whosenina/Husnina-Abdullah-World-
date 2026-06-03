@@ -1,0 +1,622 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Contact Husnina</title>
+
+    <style>
+
+        html{
+
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            background-color: #FFE4E1;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+
+            background-color: Plum;
+            padding: 18px;
+            border-radius: 15px;
+            margin: 20px;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+
+            color: #C71585;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        nav {
+
+            margin: 20px 0;
+        }
+
+        nav a {
+
+            text-decoration: none;
+            background-color: Plum;
+            color: white;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 12px;
+            font-size: 18px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        nav a:hover {
+
+            background-color: HotPink;
+            transform: scale(1.1);
+        }
+
+        .contact-box {
+
+            background-color: white;
+            width: 70%;
+            margin: auto;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        p {
+
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        /* CONTACT BUTTON */
+
+        .cute-button {
+
+            background-color: Plum;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .cute-button:hover {
+
+            background-color: HotPink;
+            transform: scale(1.08);
+        }
+
+        /* REMOVE BLUE LINK */
+
+        .contact-link {
+
+            text-decoration: none;
+        }
+
+        /* SOCIAL MEDIA FRAME */
+
+        .social-container{
+
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .social-frame{
+
+            background: linear-gradient(
+                135deg,
+                #FFB6C1,
+                #FFD1DC,
+                #E6E6FA,
+                #B0E0E6
+            );
+
+            padding: 12px;
+            border-radius: 28px;
+            position: relative;
+
+            box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+
+            transition: 0.4s;
+
+            border: 4px solid white;
+
+            width: 220px;
+        }
+
+        .social-frame:hover{
+
+            transform: translateY(-8px) scale(1.03);
+        }
+
+        .social-frame img{
+
+            width: 200px;
+            border-radius: 22px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .social-topbar{
+
+            display: flex;
+            gap: 6px;
+            margin-bottom: 10px;
+            margin-left: 5px;
+        }
+
+        .dot{
+
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .red{
+
+            background-color: #FF6B6B;
+        }
+
+        .yellow{
+
+            background-color: #FFD93D;
+        }
+
+        .green{
+
+            background-color: #6BCB77;
+        }
+
+        .social-name{
+
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* PAGE BUTTONS */
+
+        .page-buttons{
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 28px;
+
+            margin-top: 45px;
+
+            flex-wrap: wrap;
+        }
+
+        .previous-page,
+        .next-page,
+        .top-button{
+
+            text-decoration: none;
+
+            color: white;
+
+            padding: 16px 30px;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            transition: 0.4s;
+
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        /* PREVIOUS BUTTON */
+
+        .previous-page{
+
+            background: linear-gradient(
+                135deg,
+                #DB7093,
+                HotPink
+            );
+
+            border-radius: 8px 40px 40px 8px;
+        }
+
+        .previous-page:hover{
+
+            transform: translateX(-10px) scale(1.05);
+
+            background: linear-gradient(
+                135deg,
+                HotPink,
+                #C71585
+            );
+        }
+
+        .previous-page::before{
+
+            content: "⬅";
+
+            margin-right: 10px;
+
+            font-size: 22px;
+        }
+
+        /* BACK TO TOP BUTTON */
+
+        .top-button{
+
+            background: linear-gradient(
+                135deg,
+                #FFB6C1,
+                Plum
+            );
+
+            border-radius: 40px;
+        }
+
+        .top-button:hover{
+
+            transform: translateY(-6px) scale(1.05);
+
+            background: linear-gradient(
+                135deg,
+                HotPink,
+                #C71585
+            );
+        }
+
+        .top-button::before{
+
+            content: "⬆";
+
+            margin-right: 10px;
+
+            font-size: 22px;
+        }
+
+        /* NEXT BUTTON */
+
+        .next-page{
+
+            background: linear-gradient(
+                135deg,
+                Plum,
+                HotPink
+            );
+
+            border-radius: 40px 8px 8px 40px;
+        }
+
+        .next-page:hover{
+
+            transform: translateX(10px) scale(1.05);
+
+            background: linear-gradient(
+                135deg,
+                HotPink,
+                #C71585
+            );
+        }
+
+        .next-page::after{
+
+            content: "➜";
+
+            margin-left: 10px;
+
+            font-size: 22px;
+        }
+
+        /* BACK HOME */
+
+        .back-home {
+
+            text-decoration: none;
+            background-color: #DB7093;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-top: 35px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .back-home:hover {
+
+            background-color: #C71585;
+            transform: scale(1.1);
+        }
+
+        footer {
+
+            margin-top: 30px;
+            padding-bottom: 20px;
+            font-size: 16px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- BACKGROUND MUSIC -->
+
+    <audio autoplay loop>
+
+        <source src="audio for home, about, education, interest, contact, experience, gallery and writing/leberch-soft-piano-501446.mp3" type="audio/mpeg">
+
+    </audio>
+
+    <h1>
+        <b>
+            ─୨ৎ─ Contact Me For More Information About Husnina ─୨ৎ─
+        </b>
+    </h1>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="about.html">About 🎀</a>
+
+        <a href="education.html">Education 🎓</a>
+
+        <a href="interest.html">Interest 🩰</a>
+
+        <a href="contact.html">Contact 💌</a>
+
+        <a href="exprience.html">Experience 💪</a>
+
+        <a href="gallery.html">Gallery 📸</a>
+
+        <a href="writing.html">Writing ✒️</a>
+
+    </nav>
+
+    <!-- CONTACT BOX -->
+
+    <div class="contact-box">
+
+        <h2>
+
+            You can always reach out to me since i am glad to entertain my audience 🫵🏻🫶🏻
+
+        </h2>
+
+        <p>
+
+            ☎️ Call me or you can save my <b>number</b> with Cutie Husnina 📞:
+
+        </p>
+
+        <!-- PHONE BUTTON -->
+
+        <a href="tel:+60137413594" class="contact-link">
+
+            <button class="cute-button">
+
+                💖 013-741-3594 💖
+
+            </button>
+
+        </a>
+
+        <p>
+
+            💌 Or if you prefer to <b>email</b> me into my Gmail,
+            I have two <b>email</b> which is one for personal and
+            also professional work 📩
+
+        </p>
+
+        <p>
+
+            Personal Email ⁶🤷🏻‍♀️⁷:
+
+        </p>
+
+        <!-- PERSONAL EMAIL -->
+
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=whoseninaaa@gmail.com"
+        target="_blank"
+        class="contact-link">
+
+            <button class="cute-button">
+
+                🌸 whoseninaaa@gmail.com 🌸
+
+            </button>
+
+        </a>
+
+        <p>
+
+            Professional Email 💻:
+
+        </p>
+
+        <!-- PROFESSIONAL EMAIL -->
+
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=2024242028@student.uitm.edu.my"
+        target="_blank"
+        class="contact-link">
+
+            <button class="cute-button">
+
+                ✨ 2024242028@student.uitm.edu.my ✨
+
+            </button>
+
+        </a>
+
+        <p>
+
+            📱 I am also dropping my <b>social media account</b>
+            since you might be curious about my online social networking,
+            so here it is 👩🏻‍💻 Please dont hesitate to scan these QR 👇
+
+        </p>
+
+        <!-- SOCIAL MEDIA -->
+
+        <div class="social-container">
+
+            <!-- TELEGRAM -->
+
+            <div class="social-frame">
+
+                <div class="social-topbar">
+
+                    <div class="dot red"></div>
+
+                    <div class="dot yellow"></div>
+
+                    <div class="dot green"></div>
+
+                </div>
+
+                <img src="photo for contact/photo_2026-05-19_16-09-22.jpg">
+
+                <div class="social-name">
+
+                    ‧₊˚ ☁️ Telegram ⋅♡🪐༘⋆
+
+                </div>
+
+            </div>
+
+            <!-- TIKTOK -->
+
+            <div class="social-frame">
+
+                <div class="social-topbar">
+
+                    <div class="dot red"></div>
+
+                    <div class="dot yellow"></div>
+
+                    <div class="dot green"></div>
+
+                </div>
+
+                <img src="photo for contact/photo_2026-05-19_16-09-24.jpg">
+
+                <div class="social-name">
+
+                    °:•.🐠 TikTok *.•🪸.•:°
+
+                </div>
+
+            </div>
+
+            <!-- YOUTUBE -->
+
+            <div class="social-frame">
+
+                <div class="social-topbar">
+
+                    <div class="dot red"></div>
+
+                    <div class="dot yellow"></div>
+
+                    <div class="dot green"></div>
+
+                </div>
+
+                <img src="photo for contact/photo_2026-05-19_16-09-23.jpg">
+
+                <div class="social-name">
+
+                    ˖°𓇼🌊 Youtube ⋆🐚🫧
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PAGE BUTTONS -->
+
+        <div class="page-buttons">
+
+            <a href="interest.html" class="previous-page">
+
+                Previous Page
+
+            </a>
+
+            <a href="#" class="top-button">
+
+                Back To Top
+
+            </a>
+
+            <a href="experience.html" class="next-page">
+
+                Next Page
+
+            </a>
+
+        </div>
+
+        <br>
+
+        <!-- BACK HOME -->
+
+        <a href="index.html" class="back-home">
+
+            🏠 Back To Home
+
+        </a>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+
+            © ๋࣭ ⭑2026 whosenina official website. Best experience on Google Chrome, last updated on third June 2026 ✿
+            ⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖
+
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
